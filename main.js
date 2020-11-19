@@ -7,6 +7,30 @@ let ctx = canvas.getContext("2d");
 canvas.width = document.body.clientWidth;
 canvas.height = document.documentElement.clientHeight;
 
+
+let painting = false;
+let last = [];
+let currentColor = "black";
+
+// 旋转小风车
+let box_block = document.querySelector(".box_block")
+let body = document.querySelector("body")
+let colorNum = ""
+let colors = ['#eb9ea4','#619ac2','#65bf8a','#f5e8b1']
+    console.log(box_block)
+    box_block.onclick = () => {
+    box_block.style.animation="Positive_rotation 1s linear infinite"
+      setTimeout(() => {
+        console.log(2);
+        console.log(currentColor)
+        colorNum = Math.floor(Math.random()*5); 
+				box_block.style.animation=""
+				body.style.backgroundColor = colors[colorNum]
+		  }, 1000);
+    }
+
+
+
 button.onclick = () => {
   let body = document.getElementsByTagName("body")[0];
   canvas.classList.remove("bg");
@@ -34,15 +58,14 @@ function draw() {
       .querySelector(".icon");
     selectedIcon.classList.add("selectedIcon");
     if (currentColor === "white") {
+      currentColor = colors[colorNum];//将橡皮檫换为背景色
       reset(30);
     } else {
       reset(10);
     }
   };
 
-  let painting = false;
-  let last = [];
-  let currentColor = "black";
+  
 
   selectedColor();
 
