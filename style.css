@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  position: relative;
+}
+#canvas {
+  display: block;
+}
+.bg {
+  background-color: rgba(103, 208, 235, 0.7);
+  filter: blur(10px);
+}
+.icon {
+  width: 70px;
+  height: 70px;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+.selectedIcon {
+  width: 100px;
+  height: 100px;
+}
+.container {
+  width: 700px;
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+}
+.color,
+.control {
+  height: 100px;
+  width: 100px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon:hover {
+  width: 100px;
+  height: 100px;
+}
+
+@media (max-width: 500px) {
+  .container {
+    width: 100vw;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .color,
+  .control {
+    height: 50px;
+    width: 50px;
+    border-radius: 15px;
+  }
+  .selectedIcon {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #333;
+    border-radius: 5px;
+  }
+  .icon:hover {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+#button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 50px;
+  outline: none;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  background: rgb(103, 230, 30);
+  font-size: 30px;
+  font-family: Bahnschrift Light;
+}
+
+/* .start{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(103, 208, 235, 0.7);
+    transform: translateY(-100%);
+    float: left;
+} */

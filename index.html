@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Canvas画板</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="draw();">
+    <canvas id="canvas" class="bg"></canvas>
+    <div class="container">
+      <div id="blue" class="color">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-blue"></use>
+        </svg>
+      </div>
+      <div id="green" class="color">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-green"></use>
+        </svg>
+      </div>
+      <div id="red" class="color">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-red"></use>
+        </svg>
+      </div>
+      <div id="black" class="color">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-black"></use>
+        </svg>
+      </div>
+      <div id="white" class="color">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-xiangpica"></use>
+        </svg>
+      </div>
+      <div class="control" id="clear">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-qingkong"></use>
+        </svg>
+      </div>
+    </div>
+    <button id="button">start draw</button>
+    <script src="https://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+    <script src="//at.alicdn.com/t/font_1705103_mc0uw6f2p0o.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
