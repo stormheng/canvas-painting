@@ -12,25 +12,6 @@ let painting = false;
 let last = [];
 let currentColor = "black";
 
-// 旋转小风车
-let box_block = document.querySelector(".box_block")
-let body = document.querySelector("body")
-let colorNum = ""
-let colors = ['#eb9ea4','#619ac2','#65bf8a','#f5e8b1']
-    console.log(box_block)
-    box_block.onclick = () => {
-    box_block.style.animation="Positive_rotation 1s linear infinite"
-      setTimeout(() => {
-        console.log(2);
-        console.log(currentColor)
-        colorNum = Math.floor(Math.random()*5); 
-				box_block.style.animation=""
-				body.style.backgroundColor = colors[colorNum]
-		  }, 1000);
-    }
-
-
-
 button.onclick = () => {
   let body = document.getElementsByTagName("body")[0];
   canvas.classList.remove("bg");
@@ -49,25 +30,51 @@ function draw() {
     ctx.lineTo(x2, y2);
     ctx.stroke();
   };
-  const selectedColor = () => {
-    icons.forEach(item => {
-      item.classList.remove("selectedIcon");
-    });
-    const selectedIcon = document
-      .querySelector(`#${currentColor}`)
-      .querySelector(".icon");
-    selectedIcon.classList.add("selectedIcon");
-    if (currentColor === "white") {
-      currentColor = colors[colorNum];//将橡皮檫换为背景色
-      reset(30);
-    } else {
-      reset(10);
+
+const selectedColor = () => {
+  icons.forEach(item => {
+    item.classList.remove("selectedIcon");
+  });
+  const selectedIcon = document
+    .querySelector(`#${currentColor}`)
+    .querySelector(".icon");
+  selectedIcon.classList.add("selectedIcon");
+  if (currentColor === "white") {
+    console.log(currentColor,1)
+    if(body.style.backgroundColor === 'white'){
+      currentColor = 'white'
+    }else{
+     currentColor = colors[colorNum];//将橡皮檫换为背景色
     }
-  };
+    reset(30);
+  } else {
+    reset(10);
+  }
+  console.log(currentColor,2)
+};
+
+selectedColor();
+
+// 旋转小风车
+let box_block = document.querySelector(".box_block")
+let body = document.querySelector("body")
+let colorNum = ""
+let colors = ['#eb9ea4','#619ac2','#65bf8a','#f5e8b1']
+body.style.backgroundColor = 'white'
+    console.log(box_block)
+    box_block.onclick = () => {
+    box_block.style.animation="Positive_rotation 1s linear infinite"
+      setTimeout(() => {
+        colorNum = Math.floor(Math.random()*5); 
+				box_block.style.animation=""
+				body.style.backgroundColor = colors[colorNum]
+		  }, 1000);
+    }
+
+
+
 
   
-
-  selectedColor();
 
   //清空画布
   clear.onclick = () => {
@@ -128,3 +135,4 @@ function draw() {
     };
   }
 }
+
